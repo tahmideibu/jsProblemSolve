@@ -1,0 +1,30 @@
+<html>
+<head>
+<title>A JavaScript program where the program takes a random integer between 1 to 10, the user is then prompted to input a guess number. If the user input matches with guess number, the program will display a message "Good Work" otherwise display a message "Not matched". </title>
+</head>
+
+<body>
+
+    <button onclick="guessGame()">Play</button>
+    <div id="result"></div>
+    
+    <script>
+    
+    const guessGame = () => {
+    
+    var playerGuess = prompt('Input a number between 0-10:'),
+    randomNum = Math.ceil(Math.random() * 10);
+    res = playerGuess == randomNum ? 'Good Work' : 'Not matched';
+    
+    // player vs computer numbers
+    console.log('You guessed: '+playerGuess + ', and the Random number is: '+randomNum)
+    
+    // display result
+    document.getElementById('result').innerHTML = res ;
+    }
+    
+    </script>
+</script>
+
+</body>
+</html>

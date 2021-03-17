@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       
+    </style>
+</head>
+<body>
+    <!-----No 1-->
+    
+    <h1>Enter the year: <input type="number" id="dateEnter"></h1>
+    
+    
+    <button id="leapYearButton">Is this a leap year?</button>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <!-------No 2-->
+
+    Guess Luck:Input a number between 1 and 10.
+
+
+    <button onclick="guessGame()">Play</button>
+    <div id="result"></div>
+    
+
+      
+    <script>
+    document.getElementById("leapYearButton").onclick = function() {
+    
+    var dateEnter = document.getElementById("dateEnter").value;
+    
+    if (dateEnter == "") {
+    alert("Please choose a year!");
+    }else{
+    if (dateEnter % 4 !== 0) {
+    alert("It's a common year");
+    }else if (dateEnter % 100 !== 0) {
+    alert("It's a leap year");
+    }else if (dateEnter % 400 !== 0) {
+    alert("It's a common year");
+    }else{
+    alert("It's a leap year");
+    }
+    }
+    };
+   
+
+
+    const guessGame = () => {
+    
+    var playerGuess = prompt('Input a number between 0-10:'),
+    randomNum = Math.ceil(Math.random() * 10);
+    res = playerGuess == randomNum ? 'You Win' : 'You Loss';
+    
+    // player vs computer numbers
+    console.log('You guessed: '+playerGuess + ', and the Random number is: '+randomNum)
+    
+    // display result
+    document.getElementById('result').innerHTML = res ;
+    }
+
+
+
+
+    </script>
+
+
+
+</body>
+</html>
